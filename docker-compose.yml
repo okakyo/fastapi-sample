@@ -3,7 +3,7 @@ services:
         api:
                 restart: always
                 build: ./api
-                container_name: 'fast_py'
+                container_name: 'fastPy'
                 ports:
                         - 8000:8000
                 volumes: 
@@ -15,11 +15,12 @@ services:
                 image: mariadb:latest
                 ports: 
                         - 3306:3306
-                container_name: 'fastpy_maria'
+                container_name: 'fastpy_Maindb'
                 environment: 
-                        MYSQL_DATABASE: example
-                        MYSQL_ROOT_PASSWORD: example
-                        TZ: 'Asia/Tokyo'
+                        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+                        MYSQL_DATABASE: ${MYSQL_DATABASE}
+                        MYSQL_USER: ${MYSQL_USERNAME}
+                        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
                 volumes: 
                         - ./docker/db/data:/var/lib/mysql
                         - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
