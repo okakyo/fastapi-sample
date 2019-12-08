@@ -1,0 +1,27 @@
+version: '3.0'
+services:
+        api:
+                restart: always
+                build: ./api
+                container_name: 'fast_py'
+                ports:
+                        - 8000:8000
+                volumes: 
+                        - ./api:/api
+                depends_on:
+                        - db
+        db:
+                restart: always
+                image: mariadb:latest
+                ports: 
+                        - 3306:3306
+                container_name: 'fastpy_maria'
+                environment: 
+                        MYSQL_DATABASE: example
+                        MYSQL_ROOT_PASSWORD: example
+                        TZ: 'Asia/Tokyo'
+                volumes: 
+                        - ./docker/db/data:/var/lib/mysql
+                        - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+                        - ./docker/db/sql:/docker-entrypoint-initdb.d
+                
