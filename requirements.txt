@@ -1,0 +1,8 @@
+fastapi
+sqlalchemy 
+uvicorn 
+email-validator
+graphene 
+jinja2
+aiofiles
+PyMySQL
