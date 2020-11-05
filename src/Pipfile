@@ -12,11 +12,14 @@ gdown = "*"
 [packages]
 fastapi = "*"
 uvicorn = "*"
-pydantic = "*"
-torch = "*"
-transformers = "*"
-sqlalchemy="*" 
-PyMySQL ="*"
+torch="*"
+torchvision="*"
+transformers="*"
+tensorboard="*"
+tensorboardX="*"
+scikit-learn="*"
+mecab-python3="*"
+
 
 [requires]
 python_version = "3.8"

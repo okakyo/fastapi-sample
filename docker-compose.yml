@@ -2,12 +2,12 @@ version: '3.0'
 services:
         api:
                 restart: always
-                build: ./api
+                build: ./src
                 container_name: 'fastPy'
                 ports:
                         - 8000:8000
                 volumes: 
-                        - ./api:/api
+                        - ./src:/src
                 depends_on:
                         - db
         db:
