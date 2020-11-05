@@ -1,16 +1,16 @@
 from fastapi import FastAPI,Query
+import controller.main as apiRouter 
+from  controller.main import router as apiRouter
 
 app = FastAPI()
 
 @app.get("/")
-async def root():
-    return {"message": "Hello World"}
+def hello():
+    return "Success"
 
-@app.get("/{id}")
-async def getId(id: int):
-    return {'id':id}
+app.include_router(
+    apiRouter,
+    prefix="/api",
+    tags=["api"]
+)
 
-@app.get("/items/")
-async def read_items(q: str = Query(None)):
-    query_items = {"q": q}
-    return query_items

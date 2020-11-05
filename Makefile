@@ -1,7 +1,9 @@
 makeup:
 	docker-compose up --build
+
 up:
-	docker-compsoe up
+	docker-compose up
+
 down:
 	docker-compose down
 
